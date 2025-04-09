@@ -1,10 +1,9 @@
 .navbar {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding-top: 1rem;
+  background-color: transparent;
 }
 
 .navbar-container {
@@ -13,55 +12,34 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-logo {
+  position: static;
+  transform: none;
+  z-index: auto;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #333;
 }
 
-.navbar-logo-img {
-  height: 40px;
-  margin-right: 0.5rem;
+.navbar-logo-image {
+  height: 60px;
+  margin-right: 0.75rem;
 }
 
 .navbar-logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-}
-
-.navbar-toggle {
-  display: none;
-  cursor: pointer;
-}
-
-.navbar-toggle-icon {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  position: relative;
-}
-
-.navbar-toggle-icon::before,
-.navbar-toggle-icon::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  left: 0;
-}
-
-.navbar-toggle-icon::before {
-  top: -8px;
-}
-
-.navbar-toggle-icon::after {
-  bottom: -8px;
+  color: #1f2937;
+  line-height: 1;
 }
 
 .navbar-menu {
@@ -73,93 +51,247 @@
 }
 
 .navbar-item {
-  margin-left: 1.5rem;
+  margin: 0 1rem;
+}
+
+.navbar-item-mobile {
+  display: none;
 }
 
 .navbar-link {
-  color: #333;
+  color: #4b5563;
   text-decoration: none;
   font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
   transition: color 0.2s ease-in-out;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
 .navbar-link:hover {
-  color: #3f51b5;
+  color: #4f46e5;
 }
 
-.navbar-cart {
+.navbar-link.active {
+  color: #4f46e5;
+  font-weight: 600;
+  border-bottom-color: #4f46e5;
+}
+
+.navbar-cart, .navbar-cart-icon {
   position: relative;
+  color: #4b5563;
+  margin-left: 1rem;
+}
+
+.navbar-cart i, .navbar-cart-icon i {
+  font-size: 1.2rem;
 }
 
 .cart-badge {
   position: absolute;
-  top: -8px;
-  right: -10px;
-  background-color: #f50057;
+  top: -6px;
+  right: -8px;
+  background-color: #ef4444;
   color: white;
-  font-size: 0.75rem;
-  width: 18px;
-  height: 18px;
+  font-size: 0.7rem;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .navbar-button {
-  background-color: #3f51b5;
-  color: white;
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 9999px;
   font-weight: 500;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  text-align: center;
 }
 
-.navbar-button:hover {
-  background-color: #303f9f;
+.navbar-button-login {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.navbar-button-login:hover {
+  background-color: #f3f4f6;
 }
 
 .navbar-button-signup {
-  background-color: #f50057;
+  background-color: #0B1F4D;
+  color: white;
 }
 
 .navbar-button-signup:hover {
-  background-color: #c51162;
+  background-color: #081633;
+}
+
+.navbar-button-logout {
+  background-color: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.navbar-button-logout:hover {
+  background-color: #f3f4f6;
+}
+
+.navbar-actions .navbar-link {
+  padding: 0.5rem 0;
+  margin-left: 0.5rem;
+}
+
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+
+.navbar-toggle-icon {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #333;
+  position: relative;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggle-icon::before,
+.navbar-toggle-icon::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background-color: #333;
+  left: 0;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggle-icon::before {
+  top: -6px;
+}
+
+.navbar-toggle-icon::after {
+  bottom: -6px;
+}
+
+.navbar-menu.active + .navbar-actions .navbar-toggle .navbar-toggle-icon {
+  background-color: transparent;
+}
+
+.navbar-menu.active + .navbar-actions .navbar-toggle .navbar-toggle-icon::before {
+  transform: rotate(45deg) translate(4px, 5px);
+}
+
+.navbar-menu.active + .navbar-actions .navbar-toggle .navbar-toggle-icon::after {
+  transform: rotate(-45deg) translate(4px, -5px);
 }
 
 @media (max-width: 768px) {
-  .navbar-toggle {
-    display: block;
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-logo-image {
+    height: 50px;
+    margin-right: 0.5rem;
+  }
+
+  .navbar-logo-text {
+    font-size: 1.25rem;
   }
 
   .navbar-menu {
-    position: fixed;
-    top: 60px;
-    left: -100%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 60px);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+    padding: 0.5rem 0;
+    z-index: 999;
   }
 
   .navbar-menu.active {
-    left: 0;
+    display: flex;
   }
 
   .navbar-item {
-    margin: 1rem 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .navbar-item-mobile {
+    display: list-item;
     width: 100%;
   }
-
+  
   .navbar-link {
     display: block;
-    padding: 0.5rem 0;
+    padding: 0.75rem 1rem;
     width: 100%;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  
+  .navbar-link.active {
+    background-color: #f0f0ff;
+    border-bottom-color: #f3f4f6;
+  }
+
+  .navbar-item:last-child .navbar-link {
+    border-bottom: none;
+  }
+
+  .navbar-cart {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-cart i {
+    margin-right: 0.5rem;
+  }
+
+  .cart-badge {
+  }
+  
+  .navbar-button-mobile {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
   }
 } 

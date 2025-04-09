@@ -21,12 +21,16 @@
 
 /* Hero Section */
 .hero-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x800/3f51b5/FFFFFF?text=Hero+Background');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/imgbackground.png');
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
-  padding: 6rem 1rem;
+  width: 100%;
+  min-height: 39.25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-content {
@@ -146,7 +150,7 @@
 /* Banner Section */
 .banner-section {
   padding: 6rem 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x600/f50057/FFFFFF?text=Banner+Background');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/images/imgbackground2.png');
   background-size: cover;
   background-position: center;
   color: white;
