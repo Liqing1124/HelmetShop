@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../../assets/images/logo.png'; // Import the logo
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -33,50 +34,88 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <span className="navbar-logo-text">Helmet Shop</span>
-        </Link>
+        <NavLink to="/" className="navbar-logo">
+          <img src={logo} alt="Helmet Shop Logo" className="navbar-logo-image" />
+          <span className="navbar-logo-text">Bi Helmet</span>
+        </NavLink>
 
         <div className="navbar-toggle" onClick={toggleMenu}>
           <span className="navbar-toggle-icon"></span>
         </div>
-
+        
+        {/* Main Navigation Links */}
         <ul className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
           <li className="navbar-item">
-            <Link to="/" className="navbar-link">Home</Link>
+            <NavLink to="/" className="navbar-link" activeClassName="active" exact>Home</NavLink>
           </li>
           <li className="navbar-item">
-            <Link to="/products" className="navbar-link">Products</Link>
+            <NavLink to="/products" className="navbar-link" activeClassName="active">Products</NavLink>
           </li>
           <li className="navbar-item">
-            <Link to="/search" className="navbar-link">Search</Link>
+            <NavLink to="/search" className="navbar-link" activeClassName="active">Search</NavLink>
           </li>
+          {/* Add Cart link to main menu */}
           <li className="navbar-item">
+            <NavLink to="/cart" className="navbar-link" activeClassName="active">
+              Cart
+              {cartItemCount > 0 && <span className="cart-badge">{cartItemCount}</span>}
+            </NavLink>
+          </li>
+          {/* Action items will be moved to navbar-actions for desktop view */}
+          {/* Mobile view specific items */}
+          {/* Remove Cart Icon from mobile-specific link, if needed, or remove the block */}
+          {/* Let's remove the mobile-specific cart link entirely as it's now in the main menu */}
+          {/* 
+          <li className="navbar-item navbar-item-mobile">
             <Link to="/cart" className="navbar-link navbar-cart">
-              <i className="fas fa-shopping-cart"></i>
+               Cart 
               {cartItemCount > 0 && <span className="cart-badge">{cartItemCount}</span>}
             </Link>
           </li>
+          */}
           {isLoggedIn ? (
             <>
-              <li className="navbar-item">
-                <Link to="/profile" className="navbar-link">My Profile</Link>
+              <li className="navbar-item navbar-item-mobile">
+                <NavLink to="/profile" className="navbar-link">My Profile</NavLink>
               </li>
-              <li className="navbar-item">
-                <button onClick={handleLogout} className="navbar-button">Logout</button>
+              <li className="navbar-item navbar-item-mobile">
+                <button onClick={handleLogout} className="navbar-button navbar-button-mobile">Logout</button>
               </li>
             </>
           ) : (
             <>
-              <li className="navbar-item">
-                <Link to="/login" className="navbar-link">Login</Link>
+              <li className="navbar-item navbar-item-mobile">
+                <NavLink to="/login" className="navbar-link">Login</NavLink>
               </li>
-              <li className="navbar-item">
-                <Link to="/register" className="navbar-button navbar-button-signup">Sign Up</Link>
+              <li className="navbar-item navbar-item-mobile">
+                <NavLink to="/register" className="navbar-button navbar-button-signup navbar-button-mobile">Sign Up</NavLink>
               </li>
             </>
           )}
         </ul>
+
+        {/* Action Buttons (Desktop) */}
+        <div className="navbar-actions">
+          {/* Remove Cart icon link from desktop actions */}
+          {/* 
+          <Link to="/cart" className="navbar-link navbar-cart-icon">
+            <i className="fas fa-shopping-cart"></i>
+            {cartItemCount > 0 && <span className="cart-badge">{cartItemCount}</span>}
+          </Link>
+           */}
+          {isLoggedIn ? (
+            <>
+              <NavLink to="/profile" className="navbar-link">My Profile</NavLink>
+              <button onClick={handleLogout} className="navbar-button navbar-button-logout">Logout</button>
+            </>
+          ) : (
+            <>
+              <NavLink to="/login" className="navbar-button navbar-button-login">Log In</NavLink>
+              <NavLink to="/register" className="navbar-button navbar-button-signup">Sign Up</NavLink>
+            </>
+          )}
+        </div>
+
       </div>
     </nav>
   );

@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3 className="footer-heading">Helmet Shop</h3>
+          <h3 className="footer-heading">Bi Helmet</h3>
           <p className="footer-text">
             Your one-stop destination for high-quality helmets and accessories.
             Safety is our priority.
@@ -50,7 +50,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Helmet Shop. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Bi Helmet. All Rights Reserved.</p>
       </div>
     </footer>
   );
