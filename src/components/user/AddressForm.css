@@ -1,0 +1,60 @@
+.address-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.address-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.address-form-city {
+  flex: 2;
+}
+
+.address-form-state {
+  flex: 1;
+}
+
+.address-form-zip {
+  flex: 1;
+}
+
+.address-form-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.address-form-checkbox input {
+  margin-right: 0.5rem;
+}
+
+.address-form-checkbox label {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.address-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .address-form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .address-form-city,
+  .address-form-state,
+  .address-form-zip {
+    flex: 1 1 100%;
+  }
+} 

@@ -1,0 +1,170 @@
+.order-history {
+  padding: 1rem;
+}
+
+.order-history-title {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.order-history-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.order-history-empty p {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.order-history-error {
+  color: #f44336;
+  padding: 1rem;
+  border: 1px solid #f44336;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-card-info {
+  font-size: 0.875rem;
+}
+
+.order-id {
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.order-date {
+  color: #666;
+  margin: 0;
+}
+
+.order-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.order-status-processing {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+}
+
+.order-status-shipped {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+.order-status-delivered {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+.order-status-cancelled {
+  background-color: #ffebee;
+  color: #b71c1c;
+}
+
+.order-card-items {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-card-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.order-card-item:last-child {
+  margin-bottom: 0;
+}
+
+.order-item-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.order-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.order-item-name {
+  flex: 1;
+  font-size: 0.875rem;
+}
+
+.order-item-quantity {
+  color: #666;
+  margin: 0 0.5rem;
+  font-size: 0.875rem;
+}
+
+.order-item-price {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.order-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.order-total {
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .order-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-status {
+    margin-top: 0.5rem;
+  }
+
+  .order-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-total {
+    margin-bottom: 1rem;
+  }
+} 

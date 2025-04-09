@@ -1,0 +1,155 @@
+.product-list-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-list-banner {
+  background-color: #f5f5f5;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.product-list-banner h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.product-list-container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.product-list-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.filter-section {
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-item {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  color: #666;
+}
+
+.category-item:hover,
+.category-item.active {
+  color: #3f51b5;
+  font-weight: 500;
+}
+
+.price-slider {
+  padding: 0.5rem 0;
+}
+
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.price-slider input[type="range"] {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.product-list-content {
+  flex: 1;
+}
+
+.product-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.product-count {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.product-sort {
+  display: flex;
+  align-items: center;
+}
+
+.product-sort label {
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.product-sort select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: #333;
+}
+
+.product-list-error {
+  color: #f44336;
+  padding: 1rem;
+  border: 1px solid #f44336;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+@media (max-width: 992px) {
+  .product-list-container {
+    flex-direction: column;
+  }
+  
+  .product-list-sidebar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-list-container {
+    padding: 1rem;
+  }
+  
+  .product-list-banner h1 {
+    font-size: 1.5rem;
+  }
+  
+  .product-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+} 

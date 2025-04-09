@@ -1,0 +1,253 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x800/3f51b5/FFFFFF?text=Hero+Background');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #f50057;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.hero-button:hover {
+  background-color: #c51162;
+}
+
+/* Featured Section */
+.featured-section {
+  padding: 4rem 0;
+}
+
+.view-all-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-all-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  color: #3f51b5;
+  text-decoration: none;
+  border: 2px solid #3f51b5;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.view-all-button:hover {
+  background-color: #3f51b5;
+  color: white;
+}
+
+/* Categories Section */
+.categories-section {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.category-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.05);
+}
+
+.category-name {
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* Banner Section */
+.banner-section {
+  padding: 6rem 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x600/f50057/FFFFFF?text=Banner+Background');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.banner-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.banner-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.banner-button:hover {
+  background-color: white;
+  color: #333;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 4rem 0;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-rating {
+  color: #ffb400;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  font-weight: 500;
+  text-align: right;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .banner-content h2 {
+    font-size: 1.75rem;
+  }
+  
+  .banner-content p {
+    font-size: 1rem;
+  }
+  
+  .categories-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+} 
